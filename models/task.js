@@ -13,9 +13,9 @@ const schema=new mongoose.Schema({
         type:Boolean,
         default:false,
     },
-    user:{
-        type:mongoose.Schema.ObjectId,
-        ref:"user",
+    User:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"User",
         require:true,
     },
     createAt:{

@@ -4,7 +4,6 @@ import {  getAllusers, login, register,  getmyProfile, logout } from "../control
 import { isAuthenticated } from "../middlewares/auth.js";
 const router=express.Router(); 
 
-router.get("/all",getAllusers);
 
 router.post("/new",register);
 router.post("/login",login);

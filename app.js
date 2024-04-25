@@ -3,6 +3,8 @@ import userRouter from  "./routes/user.js";
 import taskRouter from  "./routes/task.js";
 import {config} from "dotenv";
 import cookieParser from "cookie-parser";
+import { errorMiddleware } from "./middlewares/error.js";
+import cors from "cors";
 
 export const app= express();
 
@@ -13,6 +15,11 @@ config({
 //using Middlewares
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors({
+    orgin:[process.env.FRONTEND_URL],
+    methods:["GET","POST","PUT","DELETE"],
+    credentials:true,
+}))
 
 //using routes
 app.use("/users",userRouter);
@@ -23,5 +30,6 @@ app.get("/",(req,res)=>
 {   
  res.send("Chlra hai");
 })
-
+//using errorMiddleware
+app.use(errorMiddleware);
 
