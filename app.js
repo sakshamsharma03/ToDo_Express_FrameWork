@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(cors({
     orgin:[process.env.FRONTEND_URL],
     methods:["GET","POST","PUT","DELETE"],
-    credentials:true,
+    credentials: true,
 }))
 
 //using routes

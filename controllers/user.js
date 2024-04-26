@@ -1,9 +1,9 @@
 
 import {user} from "../models/user.js"
 import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import ErrorHandler from "../middlewares/error.js";
 import { setCookie } from "../utils/features.js";
-import { trusted } from "mongoose";
+
 export const getAllusers=async (req,res)=>
 {
     
